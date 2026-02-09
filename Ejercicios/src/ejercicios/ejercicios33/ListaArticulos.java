@@ -7,6 +7,7 @@ public class ListaArticulos {
 	
 	
 	ArrayList<Articulo> lista=new ArrayList<>();
+	
 
 
 	public ListaArticulos() {
