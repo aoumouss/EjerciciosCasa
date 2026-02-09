@@ -15,7 +15,9 @@ public  abstract class Articulo {
 	public Integer getPrecio() {
 		return precio;
 	}
-	public abstract void setPrecio(Integer precio);
+	public  void setPrecio(Integer precio) {
+		this.precio=precio;
+	};
 	
 	
 	public String toString() {

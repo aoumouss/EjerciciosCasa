@@ -5,10 +5,8 @@ import java.util.List;
 
 public class ListaArticulos {
 	
+	private List<Articulo> lista;
 	
-	ArrayList<Articulo> lista=new ArrayList<>();
-	
-
 
 	public ListaArticulos() {
 		lista=new ArrayList<>();
