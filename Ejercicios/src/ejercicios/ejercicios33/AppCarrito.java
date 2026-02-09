@@ -33,7 +33,7 @@ public class AppCarrito {
 		System.out.println(carro);
 
 		
-		
+		System.out.println("Comprobación repositorio");
 		
 		
 	}
