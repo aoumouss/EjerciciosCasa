@@ -12,7 +12,7 @@ public class Libro extends Articulo {
 		this.autor = autor;
 	}
 	
-	public void  setPrecio(Integer Precio) {
+	public void  setPrecio(Integer precio) {
 		this.precio=precio;
 }
 	

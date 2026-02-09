@@ -6,12 +6,12 @@ import java.util.List;
 public class ListaArticulos {
 	
 	
+	ArrayList<Articulo> lista=new ArrayList<>();
 
 
 	public ListaArticulos() {
 		lista=new ArrayList<>();
 	}
-	ArrayList<Articulo> lista=new ArrayList<>();
 	
 
 	public void addArticulo(Articulo articulo) {

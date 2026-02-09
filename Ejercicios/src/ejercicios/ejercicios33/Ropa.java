@@ -18,7 +18,7 @@ public class Ropa extends Articulo {
 		this.color = color;
 	}
 
-	public void  setPrecio(Integer Precio) {
+	public void  setPrecio(Integer precio) {
 			this.precio=precio;
 	}
 
