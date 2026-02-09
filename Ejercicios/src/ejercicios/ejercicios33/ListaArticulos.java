@@ -1,43 +1,67 @@
 package ejercicios.ejercicios33;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ListaArticulos {
 	
-	private List<Articulo> lista;
+//	private List<Articulo> lista;
+	private Set<Articulo> set;
 	
 
 	public ListaArticulos() {
-		lista=new ArrayList<>();
+//		lista=new ArrayList<>();
+		set= new HashSet<>();
 	}
 	
 
+	
+	
+	
+	
 	public void addArticulo(Articulo articulo) {
-		lista.add(articulo);
+//		lista.add(articulo);
+		set.add(articulo);
 	}
 	
-	
 	public Integer getCantidad() {
-		return lista.size();
+		return set.size();
 	}
 	
 	public Integer getTotal() {
 		Integer total=0;
-		for (int i = 0; i < lista.size(); i++) {
-			total+=lista.get(i).getPrecio();
+		for (Articulo articulo : set) {
+			total+=articulo.getPrecio();
+			
+		} {
 		
 		}
 		return total;
 		
 	}
 	
-	public void borrarArticulo(Integer posicion) {
-		lista.remove(posicion);
+	
+	public Boolean checkLista() {
+		Boolean vacio=false;
+		if(set.isEmpty()) {
+			vacio=true;
+		}
+		return vacio;
 	}
 	
+	
+	
+	public void borrarArticulo(Articulo articulo) {
+			set.remove(articulo);
+			
+		}
+	
+	
 	public void vaciarCesta() {
-		lista.clear();
+		set.clear();
+		
 	}
 	
 	

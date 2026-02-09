@@ -1,6 +1,7 @@
 package ejercicios.ejercicios33;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,19 +31,32 @@ public class Carrito {
 		return listaArticulos.getTotal();
 	}
 	
+	public Integer getPrecioMedio() {
+		 if(listaArticulos.checkLista()) {
+			 return 0;
+		 }
+					
+		return getTotal()/getCantidad();
+	
+	}
 
 	
 	public void addArticulo(Articulo articulo) {
 		listaArticulos.addArticulo(articulo);
+		fechaActualizacion=LocalDate.now();
+
 	}
 	
 	
-	public void borrarArticulo(Integer posicion) {
-		listaArticulos.borrarArticulo(posicion);
+	public void borrarArticulo(Articulo articulo) {
+		listaArticulos.borrarArticulo(articulo);
+		fechaActualizacion=LocalDate.now();
+
 	}
 	
 	public void vaciarCesta() {
 		listaArticulos.vaciarCesta();
+		fechaActualizacion=LocalDate.now();
 	}
 	
 	
@@ -65,19 +79,12 @@ public class Carrito {
 	}
 
 
-
-	public String toString() {
-		
-		return " Nombre y dni del cliente: "+cliente.getNombre()+", "+cliente.getDni()+ 
-				"\n Cantidad de articulos: "+getCantidad()+
-				"\n Total a pagar: "+ getTotal()+
-				"\n Fecha ultima actualizacion: "+fechaActualizacion;
-				
-	}
-
-	
-	
-	
+		public String toString() {
+			DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			return "Cliente: " + cliente.getNombre() +", DNI: "+cliente.getDni()+
+					"\nArtículos: " + getCantidad() + " Suma: " + getTotal() +
+					"€\nFecha act. " + fechaActualizacion.format(format);
+		}
 	
 	
 	
