@@ -39,6 +39,9 @@ public class AppPais {
 		paises.clear();
 		System.out.println(paises);
 		
+		
+		
+		
 	
 	}
 
