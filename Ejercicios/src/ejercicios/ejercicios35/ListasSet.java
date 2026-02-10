@@ -16,8 +16,15 @@ public class ListasSet {
 		for (int i = 1; i < 6; i++) {
 			System.out.println("Introduce la cadena "+i+" : ");
 			String cadena= sc.nextLine();
-			set.add(cadena.toUpperCase());
+			set.add(cadena);
 		}
+		
+		Set<String> mayusculas= new HashSet<>();
+		for (String palabra : set) {
+			mayusculas.add(palabra.toUpperCase());
+		}
+		
+		set=mayusculas;
 		
 		System.out.println(set);
 		
@@ -27,14 +34,7 @@ public class ListasSet {
 		}
 		
 		
-		Iterator<String> it=set.iterator();
-		while(it.hasNext()) {
-			String palabra = it.next();
-			if(palabra.length()<6) {
-				it.remove();
-			}
-		}
-		
+		//Iterator para borrar el set
 		
 		
 		
