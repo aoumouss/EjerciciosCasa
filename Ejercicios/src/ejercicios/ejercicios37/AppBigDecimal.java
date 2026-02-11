@@ -27,15 +27,21 @@ public class AppBigDecimal {
 //		
 		List<BigDecimal> lista=new ArrayList<>();
 		System.out.println("Introduce 5 BigDecimal: ");
-		for (int i = 1; i < 6; i++) {
-			System.out.println(i+": ");
+		for (int i = 4; i >0; i--) {
+			System.out.println(i+"º: ");
 			BigDecimal num=sc.nextBigDecimal();
-			if(i==1) {
+			if(lista.isEmpty()) {
+				lista.add(num);
+				}
+			if(lista.size()>1) {
+				
+			if(lista.get(i).compareTo(lista.get(i-1))<0) {
 				lista.add(num);
 			}
-			if(lista.get(i+1).compareTo(lista.get(i))<0 ) {
-				lista.add(num);
+			else {
+				
 				System.out.println("Cada número tiene que ser mayor que el anterior");
+			}
 				
 			}
 		}
