@@ -27,27 +27,30 @@ public class AppBigDecimal {
 //		
 		List<BigDecimal> lista=new ArrayList<>();
 		System.out.println("Introduce 5 BigDecimal: ");
-		for (int i = 4; i >0; i--) {
-			System.out.println(i+"º: ");
+		while(lista.size()<5) {
+			System.out.println("Dame un numero" );
 			BigDecimal num=sc.nextBigDecimal();
-			if(lista.isEmpty()) {
+			if(lista.isEmpty() || num.compareTo(lista.getLast())>0 ) {
 				lista.add(num);
 				}
-			if(lista.size()>1) {
-				
-			if(lista.get(i).compareTo(lista.get(i-1))<0) {
-				lista.add(num);
-			}
 			else {
 				
 				System.out.println("Cada número tiene que ser mayor que el anterior");
 			}
 				
 			}
+		
+		System.out.println(lista);
+		
+		BigDecimal suma= BigDecimal.ZERO;
+		for (BigDecimal num : lista) {
+			suma=suma.add(num);
 		}
+		suma= suma.setScale(1,RoundingMode.HALF_DOWN);
+		System.out.println("Suma :"+suma);
 		
-		
-		
+		BigDecimal division = lista.get(0).divide(lista.get(1),3, RoundingMode.HALF_UP);
+		System.out.println(division);
 		
 		
 		
