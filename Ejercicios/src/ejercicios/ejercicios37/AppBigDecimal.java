@@ -27,18 +27,18 @@ public class AppBigDecimal {
 //		
 		List<BigDecimal> lista=new ArrayList<>();
 		System.out.println("Introduce 5 BigDecimal: ");
-		while(lista.size()<5) {
-			System.out.println("Dame un numero" );
-			BigDecimal num=sc.nextBigDecimal();
-			if(lista.isEmpty() || num.compareTo(lista.getLast())>0 ) {
-				lista.add(num);
-				}
-			else {
-				
-				System.out.println("Cada número tiene que ser mayor que el anterior");
-			}
-				
-			}
+//		while(lista.size()<5) {
+//			System.out.println("Dame un numero" );
+//			BigDecimal num=sc.nextBigDecimal();
+//			if(lista.isEmpty() || num.compareTo(lista.getLast())>0 ) {
+//				lista.add(num);
+//				}
+//			else {
+//				
+//				System.out.println("Cada número tiene que ser mayor que el anterior");
+//			}
+//				
+//			}
 		
 		System.out.println(lista);
 		
