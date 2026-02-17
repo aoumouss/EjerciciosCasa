@@ -1,5 +1,8 @@
 package ejercicios.ejercicios40;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+
 public class Ingreso extends Movimiento{
 	
 	private String descripcion;
@@ -19,8 +22,16 @@ public class Ingreso extends Movimiento{
 		this.descripcion = descripcion;
 	}
 
+	
+	
+	public BigDecimal getImporteSumar() {
+		return getImporte();
+	}
+	
+	
 	public String toString() {
-		return getInicial()+" - "+getFechaRegistro().format(formateador)+" - "+getImporte().setScale(2)+"€"+" - "+getDescripcion();
+		DecimalFormat formatDecimal= new DecimalFormat("#,###.00 €");
+		return getInicial()+" - "+getFechaRegistro().format(formateador)+" - "+formatDecimal.format(getImporte())+" - "+getDescripcion();
 	}
 
 }

@@ -2,6 +2,7 @@ package ejercicios.ejercicios40;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,23 +23,23 @@ public class CuentaAhorros {
 		
 	}
 	
-	
+	DecimalFormat formatDecimal= new DecimalFormat("#,###.00 €");
+
 	public BigDecimal getDinero() {
 		BigDecimal cantidad= new BigDecimal("0");
 		for (Movimiento movimiento : listaMovimientos) {
-			cantidad=cantidad.add(movimiento.getImporte().setScale(2,RoundingMode.HALF_DOWN));
+			cantidad=cantidad.add(movimiento.getImporteSumar().setScale(2,RoundingMode.HALF_DOWN));
 		}
 		return cantidad;
 	}
 	
 	
-	public String listaCadenas() {
-		String cadena="";
-		for (Movimiento movimiento : listaMovimientos) {
-			cadena+=""+movimiento+",\n";
-			
+	public List<String> listaCadenas() {
+		List<String> lista= new ArrayList<>();
+		for (Movimiento mov : listaMovimientos) {
+			lista.add(mov.toString());
 		}
-		return cadena;
+		return lista;
 	}
 
 	
@@ -82,7 +83,9 @@ public class CuentaAhorros {
 	
 	
 	public String toString() {
-		return "Código de Cuenta: "+codigo+" Lista de Movimientos:\n"+listaCadenas();
+		DecimalFormat formatDecimal= new DecimalFormat("#,###.00 €");
+
+		return "Código de Cuenta: "+codigo+ " Dinero en la cuenta: "+formatDecimal.format(getDinero());
 	}
 	
 	

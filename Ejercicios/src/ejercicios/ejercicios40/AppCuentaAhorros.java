@@ -51,7 +51,7 @@ public class AppCuentaAhorros {
 		System.out.println();
 		
 		System.out.println("Todos los movimientos: ");
-		System.out.println(c1);
+		System.out.println(c1.toString());
 		System.out.println();
 		
 		System.out.println("Todos los cargos: ");

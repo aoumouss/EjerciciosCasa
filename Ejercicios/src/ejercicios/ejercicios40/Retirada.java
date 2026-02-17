@@ -1,5 +1,7 @@
 package ejercicios.ejercicios40;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public class Retirada extends Movimiento{
 	
@@ -8,10 +10,13 @@ public class Retirada extends Movimiento{
 		return "R";
 	}
 	
-	
+	public BigDecimal getImporteSumar() {
+		return getImporte().negate();
+	}
 
 	public String toString() {
-		return getInicial()+" - "+getFechaRegistro().format(formateador)+" - "+getImporte().setScale(2)+"€";
+		DecimalFormat formatDecimal= new DecimalFormat("#,###.00 €");
+		return getInicial()+" - "+getFechaRegistro().format(formateador)+" - "+formatDecimal.format(getImporte());
 	}
 
 }

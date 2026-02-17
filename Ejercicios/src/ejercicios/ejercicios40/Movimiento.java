@@ -31,6 +31,8 @@ public abstract class Movimiento {
 	
 	public abstract String getInicial();
 	
+	public abstract BigDecimal getImporteSumar();
+	
 	
 	
 
