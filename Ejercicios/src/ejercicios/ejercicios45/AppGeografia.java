@@ -8,11 +8,27 @@ public class AppGeografia {
 		Geografia g= new Geografia();
 		
 		g.agregarPais("españa", "madrid");
-		g.agregarPais("s", "madrid");
-		g.agregarPais("sa", "madrid");
+		
+		g.agregarPais("italia", "roma");
+		g.agregarPais("austria", "viena");
+		
+		
+		
+		
+		
+
 		
 
 		System.out.println(g.imprimirPaises());
+		System.out.println(g.obtenerCapital("españa"));
+		g.eliminarPais("italia");
+		
+		System.out.println(g.imprimirPaises());
+		System.out.println(g.calcularLongitudPaises());
+
+		
+		
+		
 	}
 
 }
