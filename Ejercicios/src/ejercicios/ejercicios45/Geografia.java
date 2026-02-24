@@ -26,7 +26,7 @@ public class Geografia {
 			mapa.put(pais.toUpperCase(), capital);	
 		}
 		else {
-			mapa.replace(pais, capital);
+			mapa.put(pais, capital);
 			modificado=true;
 		}
 		return modificado;
@@ -57,9 +57,8 @@ public class Geografia {
 	
 	public void eliminarPais(String pais) {
 		pais=pais.toUpperCase();
-		if(mapa.containsKey(pais)) {
-			mapa.remove(pais, mapa.get(pais));
-		}
+		mapa.remove(pais);
+		return;
 	}
 	
 	
@@ -79,13 +78,51 @@ public class Geografia {
 	
 	
 	public void eliminarPaisConCapitalLetra(String letra) {
-		for(String pais: mapa.values()) {
 			
+		for(String pais: mapa.keySet()) {
+			if(mapa.get(pais).startsWith(letra.toUpperCase())) {
+				mapa.remove(pais);
+				break;
+			}
+		}
+	}
+	
+	
+	public Integer numeroPaisesConCapitalLetra(String letra) {
+		Integer contador=0;
+		for(String pais: mapa.keySet()) {
+			if(pais.startsWith(letra.toUpperCase())) {
+				contador++;
+			}
+		}
+			return contador;
+	}
+	
+	
+	public void imprimirNumeroPaisesLetra(String letra) {
+		for (String pais : mapa.keySet()) {
+			if(mapa.get(pais).startsWith(letra.toUpperCase())){
+				System.out.println(pais+" -->"+mapa.get(pais));
+				 
+			}
+			else if(!mapa.get(pais).startsWith(letra.toUpperCase())){
+				
+			}
+			else {
+				System.out.println("Ninguna capital del mapa comienza por "+letra);
+			}
 		}
 	}
 	
 	
 	
+	public void mismaLetra() {
+		for (String pais  : mapa.keySet()) {
+			if(mapa.get(pais).substring(0, 1).equalsIgnoreCase(pais.substring(0, 1))) {
+				System.out.println(pais+" --> "+mapa.get(pais));
+			}
+		}
+	}
 	
 	
 	
