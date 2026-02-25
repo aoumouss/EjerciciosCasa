@@ -90,7 +90,7 @@ public class Geografia {
 	
 	public Integer numeroPaisesConCapitalLetra(String letra) {
 		Integer contador=0;
-		for(String pais: mapa.keySet()) {
+		for(String pais: mapa.values()) {
 			if(pais.startsWith(letra.toUpperCase())) {
 				contador++;
 			}
@@ -100,27 +100,30 @@ public class Geografia {
 	
 	
 	public void imprimirNumeroPaisesLetra(String letra) {
+		Boolean hayAlguno=false;
 		for (String pais : mapa.keySet()) {
 			if(mapa.get(pais).startsWith(letra.toUpperCase())){
 				System.out.println(pais+" -->"+mapa.get(pais));
-				 
+				hayAlguno=true;
 			}
-			else if(!mapa.get(pais).startsWith(letra.toUpperCase())){
-				
-			}
-			else {
-				System.out.println("Ninguna capital del mapa comienza por "+letra);
-			}
+		}
+		if(!hayAlguno) {
+			System.out.println("No hay países con capital con al letra "+letra.toUpperCase());
 		}
 	}
 	
 	
 	
 	public void mismaLetra() {
+		Boolean hayAlguno=false;
 		for (String pais  : mapa.keySet()) {
 			if(mapa.get(pais).substring(0, 1).equalsIgnoreCase(pais.substring(0, 1))) {
 				System.out.println(pais+" --> "+mapa.get(pais));
+				hayAlguno = true;
 			}
+		}
+		if(!hayAlguno) {
+			System.out.println("No hay países que tengan la misma letra que la capital");
 		}
 	}
 	
