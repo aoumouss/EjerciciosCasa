@@ -86,9 +86,15 @@ public class Curso {
 	
 	
 	public Integer getDuracionCurso() {
+		if(fechaIni== null || fechaFin == null) {
+			return 0;
+		}
 		Period periodo = fechaIni.until(fechaFin);
-		return periodo.getMonths();
+		return periodo.getMonths()+(periodo.getYears()*12);
 	}
+	
+	
+	
 	
 	public Boolean isPlazasLibres() {
 		Boolean estado= false;
@@ -99,6 +105,9 @@ public class Curso {
 	}
 	
 	public BigDecimal getPrecioMes() {
+		if(getDuracionCurso()==0) {
+			return BigDecimal.ZERO;
+		}
 		return precio.divide(BigDecimal.valueOf(getDuracionCurso()),2, RoundingMode.HALF_DOWN);
 	}
 	
